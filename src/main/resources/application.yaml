@@ -1,0 +1,7 @@
+telegram:
+  api-url: "https://api.telegram.org/"
+  webhook-path: "https://b7fd-5-167-160-243.eu.ngrok.io"
+  bot-name: "@TestBot"
+  bot-token: ""
+server:
+  port: 80
