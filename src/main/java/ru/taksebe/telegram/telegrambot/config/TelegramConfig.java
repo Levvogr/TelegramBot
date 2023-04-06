@@ -1,4 +1,4 @@
-package org.example;
+package ru.taksebe.telegram.telegrambot.config;
 
 import lombok.AccessLevel;
 import lombok.Getter;

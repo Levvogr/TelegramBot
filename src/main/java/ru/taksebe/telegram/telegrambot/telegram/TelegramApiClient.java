@@ -1,4 +1,4 @@
-package org.example;
+package ru.taksebe.telegram.telegrambot.telegram;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,14 @@
 telegram:
   api-url: "https://api.telegram.org/"
-  webhook-path: "https://b7fd-5-167-160-243.eu.ngrok.io"
-  bot-name: "@TestBot"
+  webhook-path: "https://2c2a-5-167-161-72.eu.ngrok.io"
+  bot-name: "@AwglabcdTestBot"
   bot-token: ""
 server:
   port: 80
+spring:
+  activemq:
+    broker-url: "tcp://localhost:61616"
+    username: "admin"
+    password: "admin"
+    packages:
+      trust-all: true

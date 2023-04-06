@@ -1,9 +1,11 @@
-package org.example;
+package ru.taksebe.telegram.telegrambot.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.meta.api.methods.updates.SetWebhook;
+import ru.taksebe.telegram.telegrambot.telegram.Bot;
+import ru.taksebe.telegram.telegrambot.telegram.MessageHandler;
 
 @Configuration
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class SpringConfig {
 
     @Bean
     public Bot springWebhookBot(SetWebhook setWebhook,
-                                         MessageHandler messageHandler) {
+                                MessageHandler messageHandler) {
         Bot bot = new Bot(setWebhook, messageHandler);
 
         bot.setBotPath(telegramConfig.getWebhookPath());

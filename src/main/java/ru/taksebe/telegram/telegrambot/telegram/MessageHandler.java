@@ -1,8 +1,9 @@
-package org.example;
+package ru.taksebe.telegram.telegrambot.telegram;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -16,6 +17,7 @@ public class MessageHandler {
     TelegramApiClient telegramApiClient;
     ReplyKeyboardMaker replyKeyboardMaker;
 
+    @JmsListener(destination = "queue")
     public BotApiMethod<?> answerMessage(Message message) {
         String chatId = message.getChatId().toString();
 
