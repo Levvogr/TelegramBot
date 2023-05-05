@@ -3,24 +3,27 @@ package ru.taksebe.telegram.telegrambot.telegram;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 
+@Slf4j
 @Component
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 public class MessageHandler {
 
-    TelegramApiClient telegramApiClient;
     ReplyKeyboardMaker replyKeyboardMaker;
+
 
     @JmsListener(destination = "queue")
     public BotApiMethod<?> answerMessage(Message message) {
-        String chatId = message.getChatId().toString();
+        log.info("Message recive");
 
+        String chatId = message.getChatId().toString();
         String inputText = message.getText();
 
         if (inputText == null) {
@@ -28,6 +31,7 @@ public class MessageHandler {
         } else if (inputText.equals("/start")) {
             return getStartMessage(chatId);
         }
+
         return new SendMessage(chatId, "Non commamd");
     }
 

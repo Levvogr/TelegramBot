@@ -1,8 +1,8 @@
 telegram:
   api-url: "https://api.telegram.org/"
-  webhook-path: "https://2c2a-5-167-161-72.eu.ngrok.io"
-  bot-name: "@AwglabcdTestBot"
-  bot-token: ""
+  webhook-path: "https://c9f3-5-167-161-54.ngrok-free.app"
+  bot-name: "input @BotName"
+  bot-token: "input botToken"
 server:
   port: 80
 spring:
